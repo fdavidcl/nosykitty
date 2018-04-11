@@ -1,0 +1,28 @@
+posts:
+  allowedFields: ["title", "followup"]
+  branch: "master"
+  commitMessage: ":speech_balloon:: {fields.title}"
+  filename: "{@date:YYYY-MM-DD}-{@id}"
+  format: "frontmatter"
+
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "iso8601"
+    layout: post
+    message: " "
+  moderation: true
+  pullRequestBody: "Aquí tienes una nueva pregunta! :speech_balloon:\n---\n"
+  allowedOrigins: ["localhost", "david.quotient.space"]
+  name: "david.quotient.space/ask"
+
+  # notifications:
+    #   enabled: true
+    #   apiKey: "1q2w3e4r" # (!) ENCRYPTED
+    #   domain: "4r3e2w1q" # (!) ENCRYPTED
+  
+  path: "_posts"
+  requiredFields: ["title"]
+  transforms:
+    message: frontmatterContent

@@ -1,0 +1,14 @@
+plugins: [jekyll-paginate, jemoji]
+permalink: pretty
+
+title: Ask
+url: https://david.quotient.space
+baseurl: /ask
+paginate: 20
+
+author:
+  name: 'David'
+  twitter: fdavidcl
+
+avatar: https://secure.gravatar.com/avatar/7083d161b041964b75c38376d9dee37a?s=200
+banner: /public/banner.jpg
