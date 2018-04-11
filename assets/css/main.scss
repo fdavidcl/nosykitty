@@ -42,6 +42,7 @@ body {
 
     .posts {
         &.empty {
+            margin-top: 2rem;
             text-align: center;
             color: #555;
         }
