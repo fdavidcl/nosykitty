@@ -26,7 +26,14 @@ title: Home
   </form>
 </div>
 
+{% assign len = site.posts | size %}
+{% if len == 0 %}
+<div class="empty posts">
+  No questions yet. Ask {{ site.author.name }} something!
+</div>
+{% else %}
 <div class="posts">
+  
   {% for post in paginator.posts %}
   <article class="post">
     <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
@@ -43,6 +50,7 @@ title: Home
     </div>
   </article>
   {% endfor %}
+  
 </div>
 
 <div class="pagination">
@@ -61,3 +69,4 @@ title: Home
   <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>
+{% endif %}

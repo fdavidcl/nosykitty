@@ -1,8 +1,8 @@
 ---
 ---
 
-$accent: #006688;
-$bordercolor: desaturate(lighten($accent, 60%), 60%);
+$accent: #00626e;
+$bordercolor: desaturate(lighten($accent, 50%), 70%);
 
 body {
     font-family: Open Sans, Liberation Sans, Tahoma, Helvetica, sans-serif;
@@ -14,7 +14,7 @@ body {
 
     header {
         margin-top: 1rem;
-        padding: 1rem 0;
+        padding: 1rem 0 2rem;
 
         .icon {
             width: 4rem;
@@ -48,7 +48,6 @@ body {
 
     .ask-question {
         .question-form {
-            
             fieldset {
                 border: 0px solid;
                 padding: 0;
@@ -58,8 +57,7 @@ body {
                     text-align: right;
 
                     .send-button {
-                        background: $accent;
-                        color: white;
+                        background: $bordercolor;
                         padding: 0.5rem 1rem;
                         font-size: 1rem;
                         cursor: pointer;
@@ -79,9 +77,15 @@ body {
     }
 
     .posts {
-        border-bottom: 1px solid $bordercolor;
         margin-top: 2rem;
 
+        &:not(.empty) {
+            border-bottom: 1px solid $bordercolor;
+        }
+        &.empty {
+            text-align: center;
+            color: #555;
+        }
         .post {
             border-bottom-width: 0;
         }
