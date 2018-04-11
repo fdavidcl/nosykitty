@@ -1,0 +1,133 @@
+---
+---
+
+$accent: #006688;
+$bordercolor: desaturate(lighten($accent, 60%), 60%);
+
+body {
+    font-family: Open Sans, Liberation Sans, Tahoma, Helvetica, sans-serif;
+}
+
+.content {
+    max-width: 48rem;
+    margin: 0 auto;
+
+    header {
+        margin-top: 1rem;
+        padding: 1rem 0;
+
+        .icon {
+            width: 4rem;
+            height: 4rem;
+            background-image: url({{ site.avatar }});
+            background-size: cover;
+            border-radius: 4rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .title {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 1rem;
+            font-size: 2rem;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    a {
+        color: $accent;
+
+        &:visited {
+            color: darken($accent, 10%);
+        }
+    }
+
+    .ask-question {
+        .question-form {
+            
+            fieldset {
+                border: 0px solid;
+                padding: 0;
+
+                &.send {
+                    margin-top: 0.5rem;
+                    text-align: right;
+
+                    .send-button {
+                        background: $accent;
+                        color: white;
+                        padding: 0.5rem 1rem;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        border-width: 0;
+                    }
+                }
+            }
+
+            textarea {
+                width: 100%;
+                padding: 1rem 2rem;
+                box-sizing: border-box;
+                min-height: 4rem;
+            }
+        }
+            
+    }
+
+    .posts {
+        border-bottom: 1px solid $bordercolor;
+        margin-top: 2rem;
+
+        .post {
+            border-bottom-width: 0;
+        }
+    }
+    .post {
+        padding: 1rem 2rem;
+        border: 1px solid $bordercolor;
+
+        .question {
+            font-weight: bold;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        .date {
+            font-size: smaller;
+            color: gray;
+        }
+    }
+
+    .pagination {
+        margin: 1rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        a, span {
+            border: 1px solid $bordercolor;
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+            text-decoration: none;
+            text-align: center;
+
+            &:last-child {
+                border-left-width: 0;
+            }
+        }
+
+        span {
+            color: gray;
+            cursor: default;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

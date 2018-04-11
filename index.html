@@ -4,61 +4,60 @@ title: Home
 ---
 
 
-<div class="question">
-    <div class="container">
-      <!-- <div class="reply-to"> (TODO) -->
-      <!--   Pulsa <i class="fa fa-reply" aria-hidden="true"></i> para continuar una pregunta -->
-      <!-- </div> -->
-      <form class="question-form" method="post" action="https://api.staticman.net/v2/entry/{{ site.github.repository_nwo }}/{{ site.github.source.branch }}/posts">
-        <input name="options[redirect]" type="hidden" value="{{ site.success_path | absolute_url }}">
+<div class="ask-question">
+  <!-- <div class="reply-to"> (TODO) -->
+  <!--   Pulsa <i class="fa fa-reply" aria-hidden="true"></i> para continuar una pregunta -->
+  <!-- </div> -->
+  <form class="question-form" method="post" action="https://api.staticman.net/v2/entry/{{ site.github.repository_nwo }}/{{ site.github.source.branch }}/posts">
+    <input name="options[redirect]" type="hidden" value="{{ site.success_path | absolute_url }}">
 
-        <fieldset style="display:none">
-          <input id="posts[address]" name="fields[address]" type="text">
-        </fieldset>
+    <fieldset class="hidden">
+      <input id="posts[address]" name="fields[address]" type="text">
+    </fieldset>
 
-        <fieldset>
-          <div>
-            <textarea name="fields[title]" id="posts[title]" rows="4" type="text"></textarea>
-          </div>
-        </fieldset>
-        <fieldset style="display:flex">
-          <button class="send-button">Enviar</button>
-          <div class="form-status"></div>
-        </fieldset>
-      </form>
-    </div>
+    <fieldset>
+      <div>
+        <textarea name="fields[title]" id="posts[title]" rows="4" placeholder="Ask a question! Your question will be public in GitHub before it is answered"></textarea>
+      </div>
+    </fieldset>
+    <fieldset class="send">
+      <input class="send-button" type="submit" value="Send question">
+    </fieldset>
+  </form>
 </div>
 
 <div class="posts">
   {% for post in paginator.posts %}
-  <div class="post">
+  <article class="post">
     <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
           property="dct:title" rel="dct:type" class="question">{{ post.title | escape | markdownify }}</span>
 
-    <a href="{{ post.url | relative_url }}">{% include date.ext date=post.date %}</a>
+    <a class="date" href="{{ post.url | relative_url }}">
+      <time datetime="{{ post.date }}" pubdate>
+        {{ post.date | date: "%d %b %Y" }}
+      </time>
+    </a>
 
-   <div class="answer">
-     {{ post.content }}
-   </div>
-
-  {% include sharing.ext url=post.url title=post.title content=post.content %}
-  </div>
+    <div class="answer">
+      {{ post.content }}
+    </div>
+  </article>
   {% endfor %}
 </div>
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
+  <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
   {% else %}
-    <span class="pagination-item older">Older</span>
+  <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
+  {% if paginator.page == 2 %}
+  <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+  <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
+  {% endif %}
+  {% else %}
+  <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>

@@ -17,7 +17,7 @@
   <meta name="twitter:site" content="@{{ site.author.twitter }}" />
   <meta name="og:url" content="{{ page.url | absolute_url }}"/>
   <meta name="og:title" content="{% if page.title == "Home" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}"/>
-  <meta name="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ site.avatar }}"/>
+  <meta name="og:image" content="{{ site.avatar }}"/>
   {% if page.title != "Home" %}
   <meta name="og:description" content="{{ page.content | strip_html | truncate:100 }}"/>
   {% else %}
@@ -29,10 +29,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/hyde.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  <!--link rel="stylesheet" href="{{ site.baseurl }}/public/css/hyde.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/sharing.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/sharing.css"-->
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}{{ site.avatar }}">

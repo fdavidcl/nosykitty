@@ -2,14 +2,15 @@
 layout: default
 ---
 
-<article lang="es" class="post">
-    <header>
-      <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-            property="dct:title" rel="dct:type" class="question">{{ page.title | escape | markdownify }}</span>
-      <a href="{{ site.baseurl }}{{ page.url }}">{% include date.ext date=page.date %}</a>
-    </header>
+<article lang="{{ site.lang }}" class="post">
+  <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+        property="dct:title" rel="dct:type" class="question">{{ page.title | escape | markdownify }}</span>
+  <a class="date" href="{{ site.baseurl }}{{ page.url }}">
+    <time datetime="{{ page.date }}" pubdate>
+      {{ page.date | date: "%d %b %Y" }}
+    </time>
+  </a>
   <div class="answer">
     {{ content }}
   </div>
-  {% include sharing.ext url=page.url title=page.title content=content %}
 </article>

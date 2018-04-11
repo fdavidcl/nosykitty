@@ -11,5 +11,9 @@ author:
   name: 'David'
   twitter: fdavidcl
 
-avatar: https://secure.gravatar.com/avatar/7083d161b041964b75c38376d9dee37a?s=200
+avatar: "https://secure.gravatar.com/avatar/7083d161b041964b75c38376d9dee37a?s=200"
 banner: /public/banner.jpg
+
+
+# localization
+lang: en
