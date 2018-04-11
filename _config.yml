@@ -4,6 +4,7 @@ permalink: pretty
 title: Ask
 url: https://david.quotient.space
 baseurl: /ask
+success_path: /success
 paginate: 20
 
 author:
