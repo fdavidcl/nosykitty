@@ -1,18 +1,15 @@
-
 <div class="post ask-question">
   <form class="question-form" method="post" action="https://api.staticman.net/v2/entry/{{ site.github.repository_nwo }}/{{ site.github.source.branch }}/posts">
     <input name="options[redirect]" type="hidden" value="{{ site.success_path | absolute_url }}">
     {% if include.followup %}
     <input type="hidden" name="fields[followup]" value="{{ include.followup }}">
-    {% assign placeholder = "Answer with another question?" %}
+    {% assign placeholder = site.custom.followup_prompt %}
     {% else %}
-    {% assign placeholder = "Ask a question! Your question will be public in GitHub before it is answered" %}
+    {% assign placeholder = site.custom.prompt %}
     {% endif %}
 
     <fieldset>
-      <div>
-        <textarea name="fields[title]" id="posts[title]" rows="4" placeholder="{{ placeholder }}" required></textarea>
-      </div>
+      <textarea name="fields[title]" id="posts[title]" rows="4" placeholder="{{ placeholder }}" required autofocus></textarea>
     </fieldset>
     <fieldset class="send">
       <input class="send-button" type="submit" value="Send question">

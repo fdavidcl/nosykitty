@@ -7,12 +7,11 @@ $accentsat: 30%;
 $accenthue: hue({{ site.custom.accent }});
 $accentsat: saturation({{ site.custom.accent }});
 {% endif %}
-// #30353a
 $accent: hsl($accenthue, $accentsat, 25%);
 $bordercolor: hsl($accenthue, 30%, 70%);
 
 body {
-    font-family: Roboto, Open Sans, Liberation Sans, Tahoma, Helvetica, sans-serif;
+    font-family: Roboto, Open Sans, Liberation Sans, Ubuntu, Segoe UI, Helvetica Neue, sans-serif;
     background: lighten($bordercolor, 26%); 
 }
 
@@ -47,19 +46,16 @@ body {
         }
     }
 
-    .posts {
-        &.empty {
-            margin-top: 2rem;
-            text-align: center;
-            color: #555;
-        }
+    .posts.empty {
+        margin-top: 2rem;
+        text-align: center;
+        color: #555;
     }
     .post {
         padding: 1rem 2rem;
         border: 1px solid $bordercolor;
         margin-bottom: -1px;
         background: #fff;
-
         
         &.threaded {
             margin-left: 4rem;
@@ -67,10 +63,7 @@ body {
         
         .question {
             font-weight: bold;
-
-            p {
-                margin-bottom: 0;
-            }
+            font-size: 1rem;
         }
 
         .date, .followup {
@@ -161,8 +154,4 @@ body {
             color: inherit;
         }   
     }
-}
-
-.hidden {
-    display: none;
 }

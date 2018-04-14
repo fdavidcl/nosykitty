@@ -6,13 +6,16 @@ author:
   twitter: fdavidcl
   avatar: "https://secure.gravatar.com/avatar/7083d161b041964b75c38376d9dee37a?s=200"
 
-# Put here the url to your site (e.g. url: https://me.github.io and baseurl: /ask)
+# Put here the url to your site (e.g. url: https://username.github.io and baseurl: /ask)
 url: http://david.quotient.space
 baseurl: /ask
 
 # Customization
 custom:
   accent: "#00626e"
+  prompt: "Ask a question! It will be public on Github before it is answered"
+  followup_prompt: "Answer with another question?"
+  
 
 # Localization
 lang: en

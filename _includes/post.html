@@ -1,11 +1,9 @@
-
 <article lang="{{ site.lang }}" class="post {{ include.cl }}">
   {% if include.p.followup %}
   {% assign prev = site.posts | where: "_id", include.p.followup | first %}
   <a class="followup" href="{{ site.baseurl }}{{ prev.url }}">Following up on "{{ prev.title }}"</a>
   {% endif %}
-  <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-        property="dct:title" rel="dct:type" class="question">{{ include.p.title | escape | markdownify }}</span>
+  <h1 class="question">{{ include.p.title | escape }}</h1>
   <div class="answer">
     {{ include.p.content | markdownify }}
   </div>
