@@ -3,8 +3,8 @@ title: nosykitty
 
 author:
   name: nosykitty
-# uncomment to customize your avatar:
-#  avatar: "http://david.quotient.space/nosykitty/assets/kitty.svg"
+# comment the following line to use your github avatar:
+  avatar: "http://david.quotient.space/nosykitty/assets/kitty.svg"
 
 # Put here the url to your site (e.g. url: https://username.github.io and baseurl: /ask)
 url: http://david.quotient.space
