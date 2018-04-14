@@ -14,6 +14,7 @@ posts:
     message: " "
   moderation: true
   pullRequestBody: "You have a new question! :speech_balloon:\n---Edit the newly created file (in *Files changed*) to answer it and merge to accept it.\n\n"
+  # *Important*: put your_username.github.io as an allowed origin below:
   allowedOrigins: ["localhost", "david.quotient.space"]
   name: "david.quotient.space/ask"
 
