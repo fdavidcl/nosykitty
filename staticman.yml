@@ -1,6 +1,6 @@
 posts:
   allowedFields: ["title", "followup"]
-  branch: "master"
+  branch: "gh-pages"
   commitMessage: "Q: {fields.title}"
   filename: "{@date:YYYY-MM-DD}-{@id}"
   format: "frontmatter"
@@ -13,7 +13,7 @@ posts:
     layout: post
     message: " "
   moderation: true
-  pullRequestBody: "Aquí tienes una nueva pregunta! :speech_balloon:\n---\n"
+  pullRequestBody: "You have a new question! :speech_balloon:\n---Edit the newly created file (in *Files changed*) to answer it and merge to accept it.\n\n"
   allowedOrigins: ["localhost", "david.quotient.space"]
   name: "david.quotient.space/ask"
 
