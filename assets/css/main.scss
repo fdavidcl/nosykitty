@@ -26,7 +26,7 @@ body {
         .icon {
             width: 4rem;
             height: 4rem;
-            background-image: url({{ site.author.avatar }});
+            background-image: url({% if site.author.avatar %}{{ site.author.avatar }}{% else %}{{ site.github.owner_gravatar_url }}{% endif %});
             background-size: cover;
             border-radius: 4rem;
             display: inline-block;
@@ -146,7 +146,7 @@ body {
     }
 
     footer {
-        margin-top: 2rem;
+        margin: 2rem 0;
         color: #808080;
         font-size: 0.95rem;
 
