@@ -1,0 +1,16 @@
+
+<article lang="{{ site.lang }}" class="post">
+  {% if include.p.followup %}
+  <a class="followup" href="{{ site.baseurl }}{{ include.p.followup }}">Following up another question &uarr;</a>
+  {% endif %}
+  <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+        property="dct:title" rel="dct:type" class="question">{{ include.p.title | escape | markdownify }}</span>
+  <a class="date" href="{{ site.baseurl }}{{ include.p.url }}">
+    <time datetime="{{ include.p.date }}" pubdate>
+      {{ include.p.date | date: "%d %b %Y" }}
+    </time>
+  </a>
+  <div class="answer">
+    {{ include.p.content }}
+  </div>
+</article>

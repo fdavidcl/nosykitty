@@ -2,15 +2,6 @@
 layout: default
 ---
 
-<article lang="{{ site.lang }}" class="post">
-  <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-        property="dct:title" rel="dct:type" class="question">{{ page.title | escape | markdownify }}</span>
-  <a class="date" href="{{ site.baseurl }}{{ page.url }}">
-    <time datetime="{{ page.date }}" pubdate>
-      {{ page.date | date: "%d %b %Y" }}
-    </time>
-  </a>
-  <div class="answer">
-    {{ content }}
-  </div>
-</article>
+{% include post.html p=page %}
+
+{% include question.html followup=page.url %}

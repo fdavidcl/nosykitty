@@ -3,28 +3,7 @@ layout: default
 title: Home
 ---
 
-
-<div class="post ask-question">
-  <!-- <div class="reply-to"> (TODO) -->
-  <!--   Pulsa <i class="fa fa-reply" aria-hidden="true"></i> para continuar una pregunta -->
-  <!-- </div> -->
-  <form class="question-form" method="post" action="https://api.staticman.net/v2/entry/{{ site.github.repository_nwo }}/{{ site.github.source.branch }}/posts">
-    <input name="options[redirect]" type="hidden" value="{{ site.success_path | absolute_url }}">
-
-    <fieldset class="hidden">
-      <input id="posts[address]" name="fields[address]" type="text">
-    </fieldset>
-
-    <fieldset>
-      <div>
-        <textarea name="fields[title]" id="posts[title]" rows="4" placeholder="Ask a question! Your question will be public in GitHub before it is answered" required></textarea>
-      </div>
-    </fieldset>
-    <fieldset class="send">
-      <input class="send-button" type="submit" value="Send question">
-    </fieldset>
-  </form>
-</div>
+{% include question.html %}
 
 {% assign len = site.posts | size %}
 {% if len == 0 %}
@@ -33,24 +12,9 @@ title: Home
 </div>
 {% else %}
 <div class="posts">
-  
   {% for post in paginator.posts %}
-  <article class="post">
-    <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-          property="dct:title" rel="dct:type" class="question">{{ post.title | escape | markdownify }}</span>
-
-    <a class="date" href="{{ post.url | relative_url }}">
-      <time datetime="{{ post.date }}" pubdate>
-        {{ post.date | date: "%d %b %Y" }}
-      </time>
-    </a>
-
-    <div class="answer">
-      {{ post.content }}
-    </div>
-  </article>
+  {% include post.html p=post %}
   {% endfor %}
-  
 </div>
 
 <div class="pagination">

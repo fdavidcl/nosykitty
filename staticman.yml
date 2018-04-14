@@ -17,11 +17,6 @@ posts:
   allowedOrigins: ["localhost", "david.quotient.space"]
   name: "david.quotient.space/ask"
 
-  # notifications:
-    #   enabled: true
-    #   apiKey: "1q2w3e4r" # (!) ENCRYPTED
-    #   domain: "4r3e2w1q" # (!) ENCRYPTED
-  
   path: "_posts"
   requiredFields: ["title"]
   transforms:

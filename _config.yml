@@ -1,4 +1,6 @@
-plugins: [jekyll-paginate, jemoji]
+plugins:
+  - jekyll-paginate
+  - jemoji
 permalink: pretty
 
 title: Ask
@@ -12,7 +14,6 @@ author:
   twitter: fdavidcl
 
 avatar: "https://secure.gravatar.com/avatar/7083d161b041964b75c38376d9dee37a?s=200"
-banner: /public/banner.jpg
 
 
 # localization

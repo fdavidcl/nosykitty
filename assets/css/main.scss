@@ -1,6 +1,7 @@
 ---
 ---
 
+$accent: #30353a; // default
 $accent: #00626e;
 $bordercolor: desaturate(lighten($accent, 50%), 70%);
 
@@ -63,7 +64,7 @@ body {
             }
         }
 
-        .date {
+        .date, .followup {
             font-size: smaller;
             color: gray;
         }
