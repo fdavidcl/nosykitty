@@ -1,6 +1,6 @@
 posts:
   allowedFields: ["title", "followup"]
-  branch: "master"
+  branch: "gh-pages"
   commitMessage: "Q: {fields.title}"
   filename: "{@date:YYYY-MM-DD}-{@id}"
   format: "frontmatter"
