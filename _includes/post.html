@@ -1,7 +1,8 @@
 
-<article lang="{{ site.lang }}" class="post">
+<article lang="{{ site.lang }}" class="post {{ include.cl }}">
   {% if include.p.followup %}
-  <a class="followup" href="{{ site.baseurl }}{{ include.p.followup }}">Following up another question &uarr;</a>
+  {% assign prev = site.posts | where: "_id", include.p.followup | first %}
+  <a class="followup" href="{{ site.baseurl }}{{ prev.url }}">Following up on "{{ prev.title }}"</a>
   {% endif %}
   <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
         property="dct:title" rel="dct:type" class="question">{{ include.p.title | escape | markdownify }}</span>
@@ -11,6 +12,6 @@
     </time>
   </a>
   <div class="answer">
-    {{ include.p.content }}
+    {{ include.p.content | markdownify }}
   </div>
 </article>

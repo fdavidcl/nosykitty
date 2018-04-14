@@ -2,6 +2,15 @@
 layout: default
 ---
 
-{% include post.html p=page %}
+{% include post.html p=page cl="single" %}
 
-{% include question.html followup=page.url %}
+{% assign followups = site.posts | where: "followup", page._id %}
+{% assign len = followups | size %}
+{% if len > 0 %}
+{% for f in followups %}
+{% include post.html p=f cl="threaded" %}
+{% endfor %}
+{% endif %}
+
+{% include question.html followup=page._id %}
+

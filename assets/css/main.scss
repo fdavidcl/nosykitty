@@ -47,15 +47,18 @@ body {
             text-align: center;
             color: #555;
         }
-        .post {
-            border-top-width: 0;
-        }
     }
     .post {
         padding: 1rem 2rem;
         border: 1px solid $bordercolor;
+        margin-bottom: -1px;
         background: #fff;
 
+        
+        &.threaded {
+            margin-left: 4rem;
+        }
+        
         .question {
             font-weight: bold;
 
@@ -67,6 +70,10 @@ body {
         .date, .followup {
             font-size: smaller;
             color: gray;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
         }
 
         .answer {
