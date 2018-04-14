@@ -76,6 +76,10 @@ body {
             display: block;
         }
 
+        .date {
+            text-align: right;
+        }
+
         .answer {
             a {
                 color: $accent;
