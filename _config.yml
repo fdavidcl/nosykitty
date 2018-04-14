@@ -1,23 +1,26 @@
-custom:
-  accent: "#00626e"
-
-plugins:
-  - jekyll-paginate
-  - jemoji
-permalink: pretty
-
-title: Ask
-url: https://david.quotient.space
-baseurl: /ask
-success_path: /success
-paginate: 20
+# The title of your site
+title: Ask David stuff
 
 author:
   name: 'David'
   twitter: fdavidcl
+  avatar: "https://secure.gravatar.com/avatar/7083d161b041964b75c38376d9dee37a?s=200"
 
-avatar: "https://secure.gravatar.com/avatar/7083d161b041964b75c38376d9dee37a?s=200"
+# Put here the url to your site (e.g. url: https://me.github.io and baseurl: /ask)
+url: http://david.quotient.space
+baseurl: /ask
 
+# Customization
+custom:
+  accent: "#00626e"
 
-# localization
+# Localization
 lang: en
+
+# Configuration stuff you don't care about
+plugins:
+  - jekyll-paginate
+  - jemoji
+permalink: pretty
+success_path: /success
+paginate: 20
