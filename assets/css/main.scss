@@ -1,13 +1,19 @@
 ---
 ---
 
-$accent: #30353a; // default
-$accent: #00626e;
-$bordercolor: desaturate(lighten($accent, 50%), 70%);
+$accenthue: 180;
+$accentsat: 30%;
+{% if site.custom.accent %}
+$accenthue: hue({{ site.custom.accent }});
+$accentsat: saturation({{ site.custom.accent }});
+{% endif %}
+// #30353a
+$accent: hsl($accenthue, $accentsat, 25%);
+$bordercolor: hsl($accenthue, 30%, 70%);
 
 body {
     font-family: Open Sans, Liberation Sans, Tahoma, Helvetica, sans-serif;
-    background: lighten($bordercolor, 25%); 
+    background: lighten($bordercolor, 26%); 
 }
 
 .content {

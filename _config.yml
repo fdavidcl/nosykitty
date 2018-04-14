@@ -1,3 +1,6 @@
+custom:
+  accent: "#00626e"
+
 plugins:
   - jekyll-paginate
   - jemoji
