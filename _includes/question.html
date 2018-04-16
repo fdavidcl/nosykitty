@@ -1,5 +1,10 @@
+{% if site.github.repository_nwo == "fdavidcl/nosykitty" %}
+{% assign repo = "fdavidcl/ask" %}
+{% else %}
+{% assign repo = site.github.repository_nwo %}
+{% endif %}
 <div class="post ask-question">
-  <form class="question-form" method="post" action="https://api.staticman.net/v2/entry/{{ site.github.repository_nwo }}/{{ site.github.source.branch }}/posts">
+  <form class="question-form" method="post" action="https://api.staticman.net/v2/entry/{{ repo }}/{{ site.github.source.branch }}/posts">
     <input name="options[redirect]" type="hidden" value="{{ site.success_path | absolute_url }}">
     {% if include.followup %}
     <input type="hidden" name="fields[followup]" value="{{ include.followup }}">
