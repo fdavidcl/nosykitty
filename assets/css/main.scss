@@ -12,7 +12,8 @@ $bordercolor: hsl($accenthue, 30%, 70%);
 
 body {
     font-family: Roboto, Open Sans, Liberation Sans, Ubuntu, Segoe UI, Helvetica Neue, sans-serif;
-    background: lighten($bordercolor, 26%); 
+    background: lighten($bordercolor, 26%);
+    line-height: 1.5;
 }
 
 .content {
